@@ -2,26 +2,7 @@
   <div class="home">
     <Nav/>
     <!-- 侧边栏 -->
-    <div :class="{sidebar:a , ys:isVisible }">
-      <div class="sidebarA">
-
-      </div>
-      <div class="sidebarB" @click="kb()">
-
-      </div>
-    </div>
-    <!-- 顶部搜索导航栏 -->
-    <div class="harder" >
-      <span  @click="kb()"  class="iconcd"><iconfont-svg icon="icon-caidan2" size="30"></iconfont-svg></span>
-      <div id="container">
-     <div class="search bar1">
-            <form>
-                <input type="text" style="border-radius:17px;" placeholder="请输入您要搜索的内容...">
-                <button type="submit" >  <iconfont-svg icon="icon-sousuo2" size="34" ><i ></i></iconfont-svg></button>
-            </form>
-        </div>
-    </div>
-    </div>
+    <Harder></Harder>
     <!-- 轮播图 -->
     <div class="swiper">
       <div class="swiper_list">
@@ -42,11 +23,11 @@
     </div>
     <!-- 菜单栏 -->
     <div class="menu">
-      <div class="menu_list menu_listA" @click="menu(1)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listB" @click="menu(2)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listC" @click="menu(3)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listD" @click="menu(4)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listE" @click="menu(5)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
+      <div class="menu_list menu_listA" @click="menu('china')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
+      <div class="menu_list menu_listB" @click="menu('america')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
+      <div class="menu_list menu_listC" @click="menu('canada')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
+      <div class="menu_list menu_listD" @click="menu('canada')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
+      <div class="menu_list menu_listE" @click="menu('swit')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
       <div class="menu_list menu_listF" @click="menu(6)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
       <div class="menu_list menu_listG" @click="menu(7)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
       <div class="menu_list menu_listH" @click="menu(8)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
@@ -58,116 +39,47 @@
       <div class="menu_list menu_listN" @click="menu(14)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
       <div class="menu_list menu_listO" @click="menu(15)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
     </div> 
-
+    <!-- 推荐 -->
+    <div>
+      
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import axios from 'axios'
+import router from '@/router';
+import harder from '@/components/harder.vue';
 export default {
+  components: { harder },
   name: 'HomeView',
   data(){
     return{
-      a:true,
-      isVisible:false
+      
     }
   },
   methods:{
-    kb(){
-        this.isVisible = !this.isVisible;
-        this.a =! this.a
-    },
+    
     menu(id){
-      axios.get('api/hello/type=' + id).then(res =>{
-        console.log(res);
+      axios.get('api/travel/' + id).then(res =>{
+       
+        this.$router.push({path :  id})
       })
     }
   }
 }
 </script>
 <style>
-/* 侧边栏 */
-  .sidebar{
-  display: none;
-  }
-.ys{
-  position: absolute;
-  display: flex;
-  height: 0;
-  width: 0px;
-  width: 100%;
-
-}.sidebarA{
-  width: 63%;
-    height: 43vh;
-    background: slategray;
-    z-index: 2;
-    border-radius: 2px 2px 10px 2px;
-}.sidebarB{
-    width: 100%;
-    height: 100vh;
-    background: rgba(135, 135, 135, 0.344);
-    position: absolute;
-    z-index: 0;
-}
-/* 搜索导航栏 */
-#container{
-  margin-top: 5px;
-}
-.harder{
-  display: flex;
-  align-items: center;
-  
-}
-.iconcd{
-  margin-right: 18%;
-}
-.bar1 {
-  
+/* 推荐 */
+.Recommend{
+  width: 48%;
+  height: 120px;
+  background: #2ad349;
+  float: left;
+  margin: 1%;
 }
 
-.bar1 input {
-    border: 2px solid #7BA7AB;
-    border-radius: 5px;
-    background: #F9F0DA;
-    color: #9E9C9C;
-}
-
-.bar1 button {
-    top: 0;
-    right: 0;
-    background: #7BA7AB;
-    border-radius: 0 5px 5px 0;
-}
-
-  * {
-    box-sizing: border-box;
-}
-form {
-    position: relative;
-    width: 200px;
-    margin: 0 auto;
-}
-
-input,
-button {
-    border: none;
-    outline: none;
-}
-
-input {
-    width: 100%;
-    height: 35px;
-    padding-left: 13px;
-}
-
-button {
-    height: 35px;
-    width: 35px;
-    cursor: pointer;
-    position: absolute;
-}
 /* 轮播图 */
 .swiper{
   width: 96%;
