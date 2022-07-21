@@ -23,6 +23,11 @@ const routes = [
     path:'/home/see',
     name:'see',
     component: () => import('../views/ViewMoew/see.vue') 
+  },
+  {
+    path:'/:id',
+    name:'travel',
+    component: () => import('../views/travel.vue') 
   }
 ]
 
