@@ -23,21 +23,21 @@
     </div>
     <!-- 菜单栏 -->
     <div class="menu">
-      <div class="menu_list menu_listA" @click="menu('china')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listB" @click="menu('america')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listC" @click="menu('canada')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listD" @click="menu('canada')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listE" @click="menu('swit')"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listF" @click="menu(6)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listG" @click="menu(7)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listH" @click="menu(8)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listI" @click="menu(9)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listJ" @click="menu(10)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listK" @click="menu(11)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listL" @click="menu(12)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listM" @click="menu(13)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listN" @click="menu(14)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
-      <div class="menu_list menu_listO" @click="menu(15)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="34" ><i ></i></iconfont-svg></div>
+      <div class="menu_list menu_listA" @click="menu('china')"><iconfont-svg class="menu_icon" icon="icon-zhongguofengjianzhu" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
+      <div class="menu_list menu_listB" @click="menu('america')"><iconfont-svg class="menu_icon" icon="icon-meiguoyiliao" size="25" ><i ></i></iconfont-svg><p class="icon_font">美国</p></div>
+      <div class="menu_list menu_listC" @click="menu('canada')"><iconfont-svg class="menu_icon" icon="icon-jianadaCNta" size="25" ><i ></i></iconfont-svg><p class="icon_font">加拿大</p></div>
+      <div class="menu_list menu_listD" @click="menu('japan')"><iconfont-svg class="menu_icon" icon="icon-riben" size="25" ><i ></i></iconfont-svg><p class="icon_font">日本</p></div>
+      <div class="menu_list menu_listE" @click="menu('swit')"><iconfont-svg class="menu_icon" icon="icon-yuanjing" size="25" ><i ></i></iconfont-svg><p class="icon_font">瑞士</p></div>
+      <div class="menu_list menu_listF" @click="menu(6)"><iconfont-svg class="menu_icon" icon="icon-malaixiyai" size="25" ><i ></i></iconfont-svg><p class="icon_font">马来西亚</p></div>
+      <div class="menu_list menu_listG" @click="menu(7)"><iconfont-svg class="menu_icon" icon="icon-yingguo1" size="25" ><i ></i></iconfont-svg><p class="icon_font">英国</p></div>
+      <div class="menu_list menu_listH" @click="menu(8)"><iconfont-svg class="menu_icon" icon="icon-yingguotaqiao" size="25" ><i ></i></iconfont-svg><p class="icon_font">新加坡</p></div>
+      <div class="menu_list menu_listI" @click="menu(9)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
+      <div class="menu_list menu_listJ" @click="menu(10)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
+      <div class="menu_list menu_listK" @click="menu(11)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
+      <div class="menu_list menu_listL" @click="menu(12)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
+      <div class="menu_list menu_listM" @click="menu(13)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
+      <div class="menu_list menu_listN" @click="menu(14)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
+      <div class="menu_list menu_listO" @click="menu(15)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
     </div> 
     <!-- 推荐 -->
     <div>
@@ -147,8 +147,17 @@ export default {
   border-radius: 0px 0px 5px 0px; background: #c7cf6f70;
 }.menu_icon{
   position: absolute;
-  transform: translate(50%,-50%);
+  transform: translate(100%,-78%);
   top: 50%;
   left: 0;
+}.icon_font{
+  font-size: 12px;
+    
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    transform: translate(-50%, 0px);
+}.iconfont-js{
+  color: beige;
 }
 </style>
