@@ -39,9 +39,30 @@
       <div class="menu_list menu_listN" @click="menu(14)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
       <div class="menu_list menu_listO" @click="menu(15)"><iconfont-svg class="menu_icon" icon="icon-daizhangguanli" size="25" ><i ></i></iconfont-svg><p class="icon_font">中国</p></div>
     </div> 
+    <!-- 轮播图 -->
+    <div class="swiper_tow">
+      <div class="swiper_tow_list"></div>
+      <div class="swiper_tow_list"></div>
+      <div class="swiper_tow_list"></div>
+      <div class="swiper_tow_list"></div>
+      <div class="swiper_tow_list"></div>
+      <div class="swiper_tow_list"></div>
+    </div>
     <!-- 推荐 -->
-    <div>
-      
+
+    <div class="tj">
+      <div class="tj1" >
+        <div  v-for="index in tj1" :key="index.item">
+          
+          <img @click="a(index.img)" class="tj_img" :src="index.img" alt="" srcset="">
+          
+        </div>
+      </div>
+      <div class="tj2">
+        <div  v-for="index in tj2" :key="index.item">
+           <img @click="a(index.img)" class="tj_img" :src="index.img" alt="" srcset="">
+          </div>
+      </div>
     </div>
   </div>
 </template>
@@ -56,21 +77,42 @@ export default {
   name: 'HomeView',
   data(){
     return{
-      
+      list:[
+        {id:1,name:"",img:"",}
+      ],
+      tj1:[
+        {id:1,name:"",img:"https://img2.baidu.com/it/u=2971770275,4249590145&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1659114000&t=c56f923fe7ad60ca72aae3c40cc21215",},
+        {id:2,name:"",img:"https://img1.baidu.com/it/u=1756691966,3932535320&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1659114000&t=7388b62c30994edd03882095e8198520",},
+        {id:3,name:"",img:"https://img1.baidu.com/it/u=3324437857,1137023330&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=750",},
+        {id:4,name:"",img:"https://img2.baidu.com/it/u=686428874,3063636929&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500",},
+        {id:5,name:"",img:"https://img0.baidu.com/it/u=4008405335,1195432668&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800",},
+        {id:6,name:"",img:"https://img2.baidu.com/it/u=4256506015,3691581927&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",},
+        {id:7,name:"",img:"https://img2.baidu.com/it/u=442159843,30029578&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",},
+       
+      ],
+      tj2:[
+        {id:1,name:"",img:"https://img2.baidu.com/it/u=2680194495,2163004577&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",},
+        {id:2,name:"",img:"https://img2.baidu.com/it/u=4266769265,2090637863&fm=253&fmt=auto&app=138&f=JPEG?w=355&h=500",},
+        {id:3,name:"",img:"https://img0.baidu.com/it/u=2807461576,1950483897&fm=253&fmt=auto&app=138&f=JPEG?w=489&h=755",},
+        {id:4,name:"",img:"https://img2.baidu.com/it/u=4148837542,119294277&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",},
+      ]
     }
   },
   methods:{
     
     menu(id){
       axios.get('api/travel/' + id).then(res =>{
-       
         this.$router.push({path :  id})
       })
+    },
+    a(aa){
+      console.log(aa);
     }
   }
 }
 </script>
-<style>
+<style scoped>
+
 /* 推荐 */
 .Recommend{
   width: 48%;
@@ -159,5 +201,31 @@ export default {
     transform: translate(-50%, 0px);
 }.iconfont-js{
   color: beige;
+}
+
+.tj{
+  width: 98%;
+  height: 100%;
+  box-shadow: 0px 0px 16px 5px rgb(200, 200, 200);
+  border-radius: 10px;
+  margin-left: 1%;
+}
+.tj1{
+  width: 49%;
+  height: 500px;
+  margin-right: 2%;
+  border-radius: 10px;
+  float: left;
+  margin-top: 15px;
+}.tj2{
+  width: 49%;
+  height: 500px;
+  float: left;
+  border-radius: 10px;
+  margin-top: 15px;
+}.tj_img{
+  width: 94%;
+  margin: 3%;
+  border-radius: 10px;
 }
 </style>
