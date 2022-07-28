@@ -1,12 +1,20 @@
 <template>
-  <div>
+  <div >
      <!-- 侧边栏 -->
     <div :class="{sidebar:a , ys:isVisible }">
       <div class="sidebarA">
-
+        <div class="lm">
+          <ul>
+          <li>123456</li>
+          <li>123456</li>
+          <li>123456</li>
+          <li>123456</li>
+          <li>123456</li>
+        </ul>
+        </div>
       </div>
       <div class="sidebarB" @click="kb()">
-
+        
       </div>
     </div>
     <!-- 顶部搜索导航栏 -->
@@ -14,9 +22,9 @@
       <span  @click="kb()"  class="iconcd"><iconfont-svg icon="icon-caidan2" size="30"></iconfont-svg></span>
       <div id="container">
      <div class="search bar1">
-            <form>
+            <form action="">
                 <input type="text" style="border-radius:17px;" placeholder="请输入您要搜索的内容...">
-                <button type="submit" >  <iconfont-svg icon="icon-sousuo2" size="34" ><i ></i></iconfont-svg></button>
+                <button type="submit" > <iconfont-svg icon="icon-sousuo2" size="34" ><i ></i></iconfont-svg></button>
             </form>
         </div>
     </div>
@@ -43,8 +51,17 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 /* 侧边栏 */
+.harder{
+  display: flex;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    z-index: 10;
+    background: #dddddd;width: 100%;
+    height: 50px;
+}
   .sidebar{
   display: none;
   }
@@ -124,5 +141,14 @@ button {
     width: 35px;
     cursor: pointer;
     position: absolute;
+}
+.lm{
+  margin-top: 70px;
+}.lm>ul>li{
+  height: 30px;
+  text-align: center;
+  width: 100%;
+}.lm>ul>li:hover{
+  background: #F9F0DA;
 }
 </style>
