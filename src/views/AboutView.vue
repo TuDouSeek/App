@@ -1,112 +1,74 @@
 <template>
-  <div class="home">
+  <div>
     <Nav/>
     <!-- 侧边栏 -->
     <Harder></Harder>
-    <!-- 轮播图 -->
-  <div class="waterfall-container" >
-    <div v-for="(item, index) in list" :key="index" class="list">
-      <div
-        v-for="(it, key) in item"
-        :key="key"
-        class="item"
-        :style="{ height: `${it.itemHeight}rem` }"
-      >
-        <img
-          class="cover"
-          :key="it.thumb_path"
-          src="https://img1.halobear.com/upload_page/FvZmzzPmEhvRzE7ThqyrjcSZXAg_.png"
-          v-lazy="it.thumb_path"
-          :style="{ height: `${it.imageHeight}rem` }"
-        />
+    <div class="home">
+       <div class="center">
+        <video
+            id="my-video"
+            class="video-js vjs-default-skin"
+            controls
+            preload="auto"
+            width="500px"
+        >
+            <source src="http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8" type="application/x-mpegURL" />
+        </video>
+        <button @click="checkVideo()">点击切换到CCTV3</button>
+
       </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-
-import harder from '@/components/harder.vue';
 export default {
-  components: { harder },
-  name: 'HomeView',
-  props: {
-    data: {
-      type: Array,
-      default: () => []
-    },
-  },
-  data() {
-    return {
-      index: 0
-    };
-  },
-  computed: {
-    list() {
-      let leftHeight = 0;
-      // let middleHeight = 0;
-      let rightHeight = 0;
-      const leftData = [];
-      // const middleData = [];
-      const rightData = [];
-      this.data.forEach(item => {
-        const w = item.width || item.cover_width;
-        const h = item.height || item.cover_height;
-        if (!item.imageHeight) {
-          item.imageHeight = (((h || 100) / (w || 100)) * 324) / 100;
+  methods:{
+	getVideo() {
+	   videojs(
+	       "my-video",
+	       {
+	           bigPlayButton: false,
+	           textTrackDisplay: false,
+	           posterImage: true,
+	           errorDisplay: false,
+	           controlBar: true
+	       },
+	       function() {
+	           this.play();
+	       }
+	   );
+	},
+  checkVideo() {
+    var myPlayer = videojs("my-video");
+    myPlayer.src([
+        {
+            type: "application/x-mpegURL",
+            src: "http://ivi.bupt.edu.cn/hls/cctv3hd.m3u8" //CCTV3频道
         }
-        // if (Math.min(leftHeight, middleHeight, rightHeight) == leftHeight) {
-        //   leftHeight += item.imageHeight;
-        //   leftData.push(item);
-        // } else if (
-        //   Math.min(leftHeight, middleHeight, rightHeight) == middleHeight
-        // ) {
-        //   middleHeight += item.imageHeight;
-        //   middleData.push(item);
-        // } else {
-        //   rightHeight += item.imageHeight;
-        //   rightData.push(item);
-        // }
-        
-        if (leftHeight <= rightHeight) {
-          leftHeight += item.imageHeight;
-          leftData.push(item);
-        } else {
-          rightHeight += item.imageHeight;
-          rightData.push(item);
-        }
-      });
-      return [leftData, rightData];
-      // return [leftData, middleData, rightData];
-    }
-  }
+    ]);
+    myPlayer.play();
+}
+
+},
+mounted() {
+  let _that = this;
+setTimeout(() => {
+	 _that.getVideo();
+}, 300);
+
+   
+},
+
+
 }
 </script>
-<style lang="less" scoped>
-.waterfall-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 30px 40px;
-  .list {
-    width: 339px;
-  }
-  .item {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.12rem;
-  }
-  .cover {
-    width: 100%;
-    background: block;
-    border-radius: 6px;
-    background: #f0f2f5;
-    opacity: 0.5;
-  }
-  .fadeIn {
-    transition: all 1s;
-    opacity: 1;
-  }
+<style scoped>
+	/*base code*/
+  .home{
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
 }
+
 </style>
