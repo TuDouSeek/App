@@ -1,21 +1,22 @@
 <template>
   <div class="home">
+    <Nav/>
     <ul class="ul">
       <li>
          <p>111</p>
          <img src="../assets/logo.png" alt="" srcset="">
       </li>
       <li>
-        222
+         <p>222</p>
       </li>
       <li>
-        333
+        <p>333</p>
       </li>
       <li>
-        444
+         <p>444</p>
       </li>
       <li>
-        555
+         <p>555</p>
       </li>
     </ul>
   </div>
@@ -32,7 +33,8 @@ export default {
   width: 100%;
   height: 100%;
 }.ul>li{
-  width: 100%;
+  border: 1px solid dimgrey;
+  padding: 5px;
   height: 60px;
   position: relative;
 }.ul>li:hover{
@@ -43,6 +45,11 @@ export default {
  line-height: 60px;
  border-radius: 50%;
  position: absolute;
- right: 20;
+ border: 1px solid darkcyan;
+ right: 20px;
+}.ul>li>p{
+line-height: 60px;
+position: absolute;
+ 
 }
 </style>
