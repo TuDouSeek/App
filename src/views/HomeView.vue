@@ -53,14 +53,20 @@
     <div class="tj">
       <div class="tj1" >
         <div  v-for="index in tj1" :key="index.item">
-          
-          <img @click="a(index.img)" class="tj_img" :src="index.img" alt="" srcset="">
-          
+          <img @click="a(index.img),xs()" class="tj_img" :src="index.img" alt="" srcset="">
         </div>
       </div>
       <div class="tj2">
         <div  v-for="index in tj2" :key="index.item">
-           <img @click="a(index.img)" class="tj_img" :src="index.img" alt="" srcset="">
+           <img @click="a(index.img),xs()" class="tj_img" :src="index.img" alt="" srcset="">
+          </div>
+      </div>
+      <div :class="{yc:no,xs:yes}">
+          <div class="imgs">
+            <img class="tj_img" :src="imgs" alt="" srcset="">
+          </div>
+          <div class="ycs" @click="xs">
+
           </div>
       </div>
     </div>
@@ -77,6 +83,9 @@ export default {
   name: 'HomeView',
   data(){
     return{
+      yes:true,
+      no:false,
+      imgs:"",
       list:[
         {id:1,name:"",img:"",}
       ],
@@ -106,13 +115,40 @@ export default {
       })
     },
     a(aa){
+      this.imgs = aa;
       console.log(aa);
+    },
+    xs(){
+      this.yes = !this.yes;
+      this.no =! this.no
+      console.log("aaa");
     }
   }
 }
 </script>
 <style scoped>
-
+.imgs{
+  position: absolute;
+  z-index: 20;
+  width: 88%;
+  height: 20%; 
+  bottom: 50%;
+  transform: translate(6%,20%);
+}.yc{
+ position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #6f6f6f93;
+  top: 0;
+}.xs{
+  display: none;
+}.ycs{
+   position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #6f6f6f93;
+  top: 0;
+}
 /* 推荐 */
 .Recommend{
   width: 48%;
