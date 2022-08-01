@@ -6,19 +6,22 @@
     <!-- 轮播图 -->
     <div class="swiper">
       <div class="swiper_list">
-
+          <img src="" alt="" srcset="">
+          <span></span>
       </div>
       <div class="swiper_list">
-
+          <img src="" alt="" srcset="">
+          <span></span>
       </div>
       <div class="swiper_list">
-
+          <img src="" alt="" srcset="">
+          <span></span>
+      </div>  
+      <div class="swiper_list">
+          <img src="" alt="" srcset="">
       </div>
       <div class="swiper_list">
-
-      </div>
-      <div class="swiper_list">
-
+          <img src="" alt="" srcset="">
       </div>
     </div>
     <!-- 菜单栏 -->
@@ -54,6 +57,7 @@
       <div class="tj1" >
         <div  v-for="index in tj1" :key="index.item">
           <img @click="a(index.img),xs()" class="tj_img" :src="index.img" alt="" srcset="">
+          <p class="img_p">{{index.name}}</p>
         </div>
       </div>
       <div class="tj2">
@@ -62,8 +66,15 @@
           </div>
       </div>
       <div :class="{yc:no,xs:yes}">
-          <div class="imgs">
+          <div class="imgs" style="transform: translate(7%, -25%);">
             <img class="tj_img" :src="imgs" alt="" srcset="">
+            
+              <ul class="img_ul">
+                <li >adawdad</li>
+                <li >adawdad</li>
+                <li >adawdad</li>
+              </ul>
+            
           </div>
           <div class="ycs" @click="xs">
 
@@ -76,7 +87,7 @@
 <script>
 // @ is an alias to /src
 import axios from 'axios'
-import router from '@/router';
+
 import harder from '@/components/harder.vue';
 export default {
   components: { harder },
@@ -90,13 +101,13 @@ export default {
         {id:1,name:"",img:"",}
       ],
       tj1:[
-        {id:1,name:"",img:"https://img2.baidu.com/it/u=2971770275,4249590145&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1659114000&t=c56f923fe7ad60ca72aae3c40cc21215",},
-        {id:2,name:"",img:"https://img1.baidu.com/it/u=1756691966,3932535320&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1659114000&t=7388b62c30994edd03882095e8198520",},
-        {id:3,name:"",img:"https://img1.baidu.com/it/u=3324437857,1137023330&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=750",},
-        {id:4,name:"",img:"https://img2.baidu.com/it/u=686428874,3063636929&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500",},
-        {id:5,name:"",img:"https://img0.baidu.com/it/u=4008405335,1195432668&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800",},
-        {id:6,name:"",img:"https://img2.baidu.com/it/u=4256506015,3691581927&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",},
-        {id:7,name:"",img:"https://img2.baidu.com/it/u=442159843,30029578&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",},
+        {id:1,name:"成都四姑娘山",img:"https://img2.baidu.com/it/u=2971770275,4249590145&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1659114000&t=c56f923fe7ad60ca72aae3c40cc21215",},
+        {id:2,name:"成都四姑娘山",img:"https://img1.baidu.com/it/u=1756691966,3932535320&fm=253&app=120&size=w931&n=0&f=JPEG&fmt=auto?sec=1659114000&t=7388b62c30994edd03882095e8198520",},
+        {id:3,name:"成都四姑娘山",img:"https://img1.baidu.com/it/u=3324437857,1137023330&fm=253&fmt=auto&app=120&f=JPEG?w=1200&h=750",},
+        {id:4,name:"成都四姑娘山",img:"https://img2.baidu.com/it/u=686428874,3063636929&fm=253&fmt=auto&app=120&f=JPEG?w=889&h=500",},
+        {id:5,name:"成都四姑娘山",img:"https://img0.baidu.com/it/u=4008405335,1195432668&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800",},
+        {id:6,name:"成都四姑娘山",img:"https://img2.baidu.com/it/u=4256506015,3691581927&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500",},
+        {id:7,name:"成都四姑娘山",img:"https://img2.baidu.com/it/u=442159843,30029578&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500",},
        
       ],
       tj2:[
@@ -140,6 +151,7 @@ export default {
   height: 100%;
   background: #6f6f6f93;
   top: 0;
+  left: 0;
 }.xs{
   display: none;
 }.ycs{
@@ -261,7 +273,16 @@ export default {
   margin-top: 15px;
 }.tj_img{
   width: 94%;
-  margin: 3%;
-  border-radius: 10px;
+  margin: 4% 3% 0 3%;
+  border-radius: 10px 10px 0px 0px;
+  
+}.img_p{
+  font-size: 10px;
+}
+
+.img_ul{
+ display: flex;
+    justify-content: space-around;
+    list-style: none;
 }
 </style>
