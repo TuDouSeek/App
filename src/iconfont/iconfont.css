@@ -2,9 +2,9 @@
   font-family: "iconfont"; /* Project id 3530235 */
   /* Color fonts */
   src: 
-       url('iconfont.woff2?t=1658213816249') format('woff2'),
-       url('iconfont.woff?t=1658213816249') format('woff'),
-       url('iconfont.ttf?t=1658213816249') format('truetype');
+       url('iconfont.woff2?t=1659331831105') format('woff2'),
+       url('iconfont.woff?t=1659331831105') format('woff'),
+       url('iconfont.ttf?t=1659331831105') format('truetype');
 }
 
 .iconfont {
@@ -13,6 +13,118 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-dianzan:before {
+  content: "\e609";
+}
+
+.icon-31pinglun:before {
+  content: "\e60a";
+}
+
+.icon-pinglun:before {
+  content: "\e63a";
+}
+
+.icon-pinglun1:before {
+  content: "\e60c";
+}
+
+.icon-pinglun2:before {
+  content: "\e628";
+}
+
+.icon-shoucangxiao:before {
+  content: "\e8bc";
+}
+
+.icon-dianzan1:before {
+  content: "\ec7f";
+}
+
+.icon-shoucang:before {
+  content: "\eca7";
+}
+
+.icon-good:before {
+  content: "\e62a";
+}
+
+.icon-pinglun3:before {
+  content: "\e8b4";
+}
+
+.icon-shoucang1:before {
+  content: "\e8b9";
+}
+
+.icon-dianzan2:before {
+  content: "\e8c3";
+}
+
+.icon-dianzan3:before {
+  content: "\e816";
+}
+
+.icon-pinglun4:before {
+  content: "\e60b";
+}
+
+.icon-yuanjing:before {
+  content: "\e607";
+}
+
+.icon-gaoshan:before {
+  content: "\e63e";
+}
+
+.icon-jianadaCNta:before {
+  content: "\e82f";
+}
+
+.icon-meiguoyiliao:before {
+  content: "\e61c";
+}
+
+.icon-zhongguofengjianzhu:before {
+  content: "\e605";
+}
+
+.icon-yingguotaqiao:before {
+  content: "\e636";
+}
+
+.icon-riben:before {
+  content: "\e683";
+}
+
+.icon-riben1:before {
+  content: "\e707";
+}
+
+.icon-malaixiya:before {
+  content: "\e708";
+}
+
+.icon-yingguo:before {
+  content: "\e709";
+}
+
+.icon-xinjiapo:before {
+  content: "\e70b";
+}
+
+.icon-riben2:before {
+  content: "\e62c";
+}
+
+.icon-yingguo1:before {
+  content: "\e606";
+}
+
+.icon-riben-fushishan:before {
+  content: "\e654";
 }
 
 .icon-paixu:before {
