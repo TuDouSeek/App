@@ -78,6 +78,8 @@ export default {
     background: slategray;
     z-index: 2;
     border-radius: 2px 2px 10px 2px;
+    position: absolute;
+    top: -10px;
 }.sidebarB{
     width: 100%;
     height: 100vh;
