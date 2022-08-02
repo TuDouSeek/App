@@ -7,14 +7,15 @@
       <li class="mui-table-view-cell mui-media" v-for="(item,index) in videolist" :key="item.title">
         <div class="mui-media-body">
           <p class="mui-ellipsis">
-            <span>标题：{{ item.title }}</span>
-            <span></span>
+            <span>{{ item.title }}</span>
+            <span style="font-family: fantasy;color: #4e4e4e;">{{item.js}}</span>
             
           </p>
           
         </div>
         <h1>
           <video-player
+            preload="none"
             class="video-player vjs-custom-skin"
             ref="videoPlayer"
             :playsinline="true"
@@ -30,8 +31,13 @@
             <li class="iconfont icon-dianzan"><p>{{item.dz}}</p></li>
           </ul>
         </div>
+        <div class="aaaa">
+
+      </div>
       </li>
+      
     </ul>
+    
   </div>
 </template>
 <script>
@@ -43,10 +49,25 @@ export default {
   data() {
     return {
       videolist: [
-        { title: "标题A", movie: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",sc:"2695",pl:"3",dz:"56165" },
-        { title: "标题B", movie: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",sc:"1589",pl:"623",dz:"231" },
-        { title: "标题C", movie: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",sc:"4895",pl:"155",dz:"313" },
-        { title: "标题D", movie: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4",sc:"2655",pl:"4587",dz:"2113" }
+       { title: "四姑娘山", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/6e39f59e387702304114111482/sZk2WjoZU4EA.mp4",fm:"http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/6e39f59e387702304114111482/387702304114535766.png",sc:"2695",pl:"3",dz:"56165" },
+       { title: "黄龙，西岭雪山", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/71231aa9387702304114297019/ncNKG0ArDSoA.mp4",sc:"1589",pl:"623",dz:"231" },
+       { title: "猫和老鼠四川方言版1",js:"01_麻将害猫", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/c9ff867a387702304122530033/z3LFVaTqJDIA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠四_吹口哨",js:"02_大假到海南", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/cc9edc89387702304122673931/L64zQ4MqKEUA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"03_海滩健身运动", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/cc9f4ac7387702304122674208/1P1HiZdvrO8A.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"04_竞争上岗", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/ce874fdc387702304122713113/xViJN1y6600A.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"05_冲浪的感觉", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/d3444ec8387702304122924337/3HBrEIbB9swA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"06_第82次战争", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/d3324bc8387702304122914851/a45F64mWTaoA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"07_假老练求爱记", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/cf057c6e387702304122782467/wQnU8pVwgTMA.mp4",fm:"http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/cf057c6e387702304122782467/387702304123198384.png",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"08_多嘴鸭", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/d332be26387702304122915218/58IyxBvTPrwA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"09_风车车从艺", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/ce87dd09387702304122714179/57aHZcB8NEgA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"10_风车车寂寞", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/cf05f703387702304122783005/yu9edr82q8AA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"11", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/129b1f0b387702304123376095/UbASDnAM4MoA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"12_高科技惹得祸", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/0e13e943387702304123194116/a2T66PyGq44A.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"13_高雅艺术", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/1056feaa387702304123284294/In4vDiqEOmoA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"14_荒岛奇遇", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/129b3c2b387702304123376743/OirYU8AvtDkA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"15_机器猫时代", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/1483bc1f387702304123416214/QG2nkEdiPJYA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"16_假老练变脸", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/14a6f2ee387702304123434976/7WPoHjQ3OtIA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
+       { title: "猫和老鼠",js:"17_假老练当教练", movie: "http://1309101013.vod2.myqcloud.com/99b3dd7cvodsh1309101013/14a75d64387702304123435182/7trlaUoLPxwA.mp4",fm:"",sc:"4895",pl:"155",dz:"313" },
       ],
       playsinline: true,
       playerOptions: [],
@@ -77,13 +98,13 @@ export default {
                 src: this.videolist[i].movie //url地址
               }
             ],
-            poster: "", //封面地址
+            poster: this.videolist[i].fm, //封面地址
             notSupportedMessage: "此视频暂无法播放，请稍后再试", //允许覆盖Video.js无法播放媒体源时显示的默认信息。
             controlBar: {
               timeDivider: true,
               durationDisplay: true,
               remainingTimeDisplay: false,
-              fullscreenToggle: true //全屏按钮
+              fullscreenToggle: false //全屏按钮
             }
           };
           this.playerOptions.push(arrs);
@@ -140,7 +161,7 @@ export default {
   }
   .mui-ellipsis {
     font-size: 14px;
-    color: #226aff;
+    color: #0f0f0f;
     display: flex;
     justify-content: space-between;
     margin: 5px 0;
